@@ -1,227 +1,231 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>MRCET Final Year 2026</title>
+<!DOCTYPE html> <html> <head> <title>MRCET Final Year 2026</title>
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
     body {
-        min-height: 100vh;
+        margin: 0;
         font-family: Arial, sans-serif;
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         text-align: center;
-        background: linear-gradient(135deg, #061826, #123c56, #071b2b);
-        overflow-x: hidden;
+        color: white;
+        background: linear-gradient(135deg, #0072ff, #00c6ff);
     }
 
-    .container {
-        width: 90%;
-        max-width: 950px;
-        padding: 55px 30px;
-        border-radius: 30px;
-        background: rgba(255,255,255,0.1);
-        border: 1px solid rgba(255,255,255,0.2);
-        backdrop-filter: blur(15px);
-        box-shadow: 0 25px 60px rgba(0,0,0,0.4);
-    }
-
-    .icon {
-        font-size: 70px;
-        margin-bottom: 15px;
-    }
-
-    .welcome {
-        color: #00eaff;
-        font-size: 16px;
-        font-weight: bold;
-        letter-spacing: 4px;
-        margin-bottom: 20px;
+    .page {
+        padding: 70px 20px;
     }
 
     h1 {
-        font-size: clamp(35px, 6vw, 65px);
-        line-height: 1.15;
-        margin-bottom: 20px;
-
-        background: linear-gradient(90deg, white, #00eaff, white);
-        background-size: 200%;
-        color: transparent;
-        background-clip: text;
-        -webkit-background-clip: text;
-
-        animation: shine 4s linear infinite;
+        font-size: 45px;
     }
 
-    @keyframes shine {
-        to {
-            background-position: 200%;
-        }
-    }
-
-    .description {
-        color: #d8faff;
+    .welcome {
         font-size: 18px;
-        line-height: 1.6;
-        max-width: 700px;
-        margin: auto;
+        letter-spacing: 3px;
+        color: #fff;
+    }
+
+    .box {
+        max-width: 850px;
+        margin: 30px auto;
+        padding: 35px;
+        border-radius: 20px;
+        background: rgba(0,0,0,0.25);
     }
 
     .batch {
         display: inline-block;
-        margin: 30px 0;
-        padding: 14px 30px;
-        border-radius: 50px;
-        background: linear-gradient(90deg, #00c6ff, #0072ff);
-        font-weight: bold;
-        font-size: 18px;
-        box-shadow: 0 0 25px #00c6ff66;
-    }
-
-    .button {
-        display: inline-block;
-        padding: 14px 30px;
-        border-radius: 50px;
+        padding: 12px 25px;
+        margin: 20px;
+        border-radius: 30px;
         background: white;
-        color: #075985;
-        text-decoration: none;
+        color: #0072ff;
         font-weight: bold;
-        transition: 0.3s;
     }
 
-    .button:hover {
-        transform: scale(1.08);
-        background: #00eaff;
-        color: #06202b;
-        box-shadow: 0 0 25px #00eaffaa;
+    .vote-box {
+        max-width: 600px;
+        margin: 40px auto;
+        padding: 30px;
+        border-radius: 20px;
+        background: rgba(0,0,0,0.25);
     }
 
-    .cards {
+    .student {
+        background: white;
+        color: #222;
+        margin: 15px 0;
+        padding: 18px;
+        border-radius: 12px;
         display: flex;
-        justify-content: center;
-        gap: 15px;
-        flex-wrap: wrap;
-        margin-top: 40px;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    .card {
-        width: 170px;
-        padding: 20px;
-        border-radius: 18px;
-        background: rgba(255,255,255,0.08);
-        border: 1px solid rgba(255,255,255,0.12);
-        transition: 0.3s;
+    button {
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        background: #0072ff;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
     }
 
-    .card:hover {
-        transform: translateY(-8px);
-        background: rgba(0,234,255,0.15);
+    button:hover {
+        background: #004ecc;
     }
 
-    .card .emoji {
-        font-size: 32px;
-        margin-bottom: 10px;
+    button:disabled {
+        background: gray;
+        cursor: not-allowed;
     }
 
-    .card h3 {
-        margin-bottom: 6px;
-    }
-
-    .card p {
-        color: #bcecf5;
-        font-size: 14px;
+    #message {
+        margin-top: 20px;
+        font-weight: bold;
+        color: #00ff99;
     }
 
     footer {
-        margin-top: 35px;
-        color: #a8dce5;
-        font-size: 14px;
+        margin-top: 50px;
+        padding: 20px;
     }
 
-    @media (max-width: 600px) {
-        .container {
-            padding: 40px 20px;
+    @media(max-width:600px) {
+        h1 {
+            font-size: 32px;
         }
 
-        .welcome {
-            font-size: 13px;
-            letter-spacing: 2px;
-        }
-
-        .description {
-            font-size: 16px;
-        }
-
-        .card {
-            width: 140px;
+        .student {
+            flex-direction: column;
+            gap: 10px;
         }
     }
 </style>
 
 </head> <body>
-<div class="container">
-
-    <div class="icon">🎓</div>
+<div class="page">
 
     <div class="welcome">
-        WELCOME FINAL YEAR STUDENTS
+        🎓 WELCOME FINAL YEAR STUDENTS
     </div>
 
     <h1>
-        Malla Reddy College of
+        Malla Reddy College of<br>
         Engineering & Technology
     </h1>
 
-    <p class="description">
-        Celebrating the journey, memories, friendships
-        and achievements of our amazing final-year students.
+    <p>
+        Celebrating our amazing Final Year Students
     </p>
 
     <div class="batch">
         ✨ BATCH OF 2026 ✨
     </div>
 
-    <br>
 
-    <a href="#memories" class="button">
-        🚀 Explore More
-    </a>
+    <div class="box">
 
-    <div class="cards" id="memories">
+        <h2>🎓 Welcome Students!</h2>
 
-        <div class="card">
-            <div class="emoji">🎓</div>
-            <h3>Graduation</h3>
-            <p>Final Year 2026</p>
-        </div>
-
-        <div class="card">
-            <div class="emoji">🤝</div>
-            <h3>Memories</h3>
-            <p>Friends & Moments</p>
-        </div>
-
-        <div class="card">
-            <div class="emoji">🚀</div>
-            <h3>Future</h3>
-            <p>Dream Big</p>
-        </div>
-
-        <div class="card">
-            <div class="emoji">🏆</div>
-            <h3>Achievements</h3>
-            <p>Make It Count</p>
-        </div>
+        <p>
+            Memories • Friendship • Achievements • Future
+        </p>
 
     </div>
 
+
+    <!-- VOTING -->
+
+    <div class="vote-box">
+
+        <h2>🏆 Student Choice Awards</h2>
+
+        <p>Vote for your favorite student!</p>
+
+
+        <div class="student">
+
+            <span>
+                👨‍🎓 Student A -
+                <b id="a">120</b> votes
+            </span>
+
+            <button onclick="vote('a', this)">
+                🗳️ Vote
+            </button>
+
+        </div>
+
+
+        <div class="student">
+
+            <span>
+                👩‍🎓 Student B -
+                <b id="b">95</b> votes
+            </span>
+
+            <button onclick="vote('b', this)">
+                🗳️ Vote
+            </button>
+
+        </div>
+
+
+        <div class="student">
+
+            <span>
+                👨‍🎓 Student C -
+                <b id="c">87</b> votes
+            </span>
+
+            <button onclick="vote('c', this)">
+                🗳️ Vote
+            </button>
+
+        </div>
+
+
+        <div class="student">
+
+            <span>
+                👩‍🎓 Student D -
+                <b id="d">76</b> votes
+            </span>
+
+            <button onclick="vote('d', this)">
+                🗳️ Vote
+            </button>
+
+        </div>
+
+
+        <div id="message"></div>
+
+    </div>
+
+
     <footer>
-        Made with ❤️ for MRCET Final Year Students • 2026
+        ❤️ Made for MRCET Final Year Students • 2026
     </footer>
 
 </div>
+
+
+<script>
+
+    function vote(student, button) {
+
+        let count = document.getElementById(student);
+
+        count.innerText =
+            parseInt(count.innerText) + 1;
+
+        button.disabled = true;
+
+        document.getElementById("message").innerText =
+            "✅ Your vote has been submitted!";
+
+    }
+
+</script>
 
 </body> </html>
